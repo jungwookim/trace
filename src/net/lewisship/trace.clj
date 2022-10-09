@@ -112,9 +112,10 @@
           "pass key/value pairs")
   (if-not *compile-trace*
     value
-    (let [{:keys [line]} (meta &form)]
+    (let [{:keys [line]} (meta &form)
+          kvs' (conj kvs value :%value%)]
       `(let [~'% ~value]
-         (emit-trace ~line ~@kvs)
+         (emit-trace ~line ~@kvs')
          ~'%))))
 
 (defmacro trace>>
@@ -131,9 +132,10 @@
             "pass key/value pairs")
     (if-not *compile-trace*
       value
-      (let [{:keys [line]} (meta &form)]
+      (let [{:keys [line]} (meta &form)
+            kvs' (conj kvs value :%value%)]
         `(let [~'% ~value]
-           (emit-trace ~line ~@kvs)
+           (emit-trace ~line ~@kvs')
            ~'%)))))
 
 
