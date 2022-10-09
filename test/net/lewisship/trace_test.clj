@@ -112,6 +112,7 @@
   ;; {:in net.lewisship.trace-test/calls-trace>,
   ;;  :line 25,
   ;;  :thread "nREPL-session-e439a250-d27a-474b-a694-69a97dbe5572",
+  ;;  :%value% {:value 2},
   ;;  :data {:value 2},
   ;;  :label :post-inc}
 
@@ -119,6 +120,7 @@
   ;; {:in net.lewisship.trace-test/calls-trace>>,
   ;;  :line 32,
   ;;  :thread "nREPL-session-e439a250-d27a-474b-a694-69a97dbe5572",
+  ;;  :%value% (1 2 3 4 5 6 7 8 9 10),
   ;;  :values (1 2 3 4 5 6 7 8 9 10),
   ;;  :label :post-inc}
 
